@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
@@ -13,8 +14,6 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
   const otherLocale = locale === 'de' ? 'en' : 'de';
-
-  // Build alternate locale path
   const alternatePath = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
   useEffect(() => {
@@ -47,15 +46,23 @@ export default function Navigation() {
         }`}
       >
         <div className="flex items-center justify-between px-6 md:px-12 h-16 md:h-20">
+
           {/* Logo */}
           <Link
             href={`/${locale}`}
-            className={`text-lg font-semibold tracking-widest uppercase transition-colors duration-300 ${
-              isTransparent ? 'text-white' : 'text-stone-900'
-            }`}
             onClick={() => setMenuOpen(false)}
+            className="flex items-center shrink-0"
           >
-            Cityplan AG
+            <div className={`transition-all duration-300 ${isTransparent ? 'brightness-0 invert' : ''}`}>
+              <Image
+                src="/images/logo.svg"
+                alt="Cityplan AG"
+                width={180}
+                height={50}
+                priority
+                className="h-10 w-auto md:h-12"
+              />
+            </div>
           </Link>
 
           {/* Desktop nav */}
@@ -100,21 +107,9 @@ export default function Navigation() {
                 isTransparent ? 'text-white' : 'text-stone-900'
               }`}
             >
-              <span
-                className={`block h-px w-full bg-current transition-transform origin-center duration-300 ${
-                  menuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
-              />
-              <span
-                className={`block h-px w-full bg-current transition-opacity duration-300 ${
-                  menuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`block h-px w-full bg-current transition-transform origin-center duration-300 ${
-                  menuOpen ? '-rotate-45 -translate-y-2.5' : ''
-                }`}
-              />
+              <span className={`block h-px w-full bg-current transition-transform origin-center duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block h-px w-full bg-current transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block h-px w-full bg-current transition-transform origin-center duration-300 ${menuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
             </button>
           </div>
         </div>
@@ -126,7 +121,15 @@ export default function Navigation() {
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="h-16" />
+        <div className="h-16 flex items-center px-6">
+          <Image
+            src="/images/logo.svg"
+            alt="Cityplan AG"
+            width={160}
+            height={44}
+            className="h-9 w-auto brightness-0 invert"
+          />
+        </div>
         <nav className="flex flex-col items-center justify-center flex-1 gap-10 pb-20">
           {navLinks.map(link => (
             <Link

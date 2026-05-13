@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 110" width="400" height="110">
+  <!-- Grey C arc -->
+  <path d="M 72 10
+             A 45 45 0 1 0 72 100
+             L 72 88
+             A 33 33 0 1 1 72 22
+             Z"
+        fill="#7a7a7a"/>
+
+  <!-- Red P -->
+  <text x="62" y="84" font-family="Arial Black, sans-serif" font-weight="900"
+        font-size="68" fill="#cc1122" letter-spacing="-2">P</text>
+
+  <!-- Right side text block -->
+  <!-- "cityplan" -->
+  <text x="128" y="42" font-family="Arial, Helvetica, sans-serif" font-size="22"
+        font-weight="400" fill="#555555" letter-spacing="0.5">cityplan</text>
+
+  <!-- "architektur" -->
+  <text x="128" y="63" font-family="Arial, Helvetica, sans-serif" font-size="18"
+        font-weight="300" fill="#888888" letter-spacing="0.5">architektur</text>
+
+  <!-- "generalunternehmung" -->
+  <text x="128" y="81" font-family="Arial, Helvetica, sans-serif" font-size="13"
+        font-weight="300" fill="#aaaaaa" letter-spacing="0.3">generalunternehmung</text>
+
+  <!-- "cityplanAGzürich" in red -->
+  <text x="128" y="99" font-family="Arial, Helvetica, sans-serif" font-size="15"
+        font-weight="400" fill="#cc1122" letter-spacing="0.3">cityplanAGzürich</text>
+</svg>

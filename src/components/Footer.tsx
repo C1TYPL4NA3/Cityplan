@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 
 export default function Footer() {
@@ -11,9 +12,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand */}
         <div>
-          <p className="text-white text-lg font-semibold tracking-widest uppercase mb-4">
-            Cityplan AG
-          </p>
+          <Image
+            src="/images/logo.svg"
+            alt="Cityplan AG"
+            width={160}
+            height={44}
+            className="h-11 w-auto mb-5 brightness-0 invert opacity-80"
+          />
           <address className="not-italic text-sm leading-relaxed">
             Musterstrasse 12<br />
             8001 Zürich<br />
