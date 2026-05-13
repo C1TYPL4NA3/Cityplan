@@ -67,7 +67,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: '2',
+    id: '3',
     slug: 'buerohaus-nordpark',
     title: { de: 'Bürohaus Nordpark', en: 'Nordpark Office Building' },
     category: 'commercial',
