@@ -20,6 +20,32 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: '1',
+    slug: 'rotes-schloss',
+    title: { de: 'Sanierung Anwaltskanzlei Rotes Schloss', en: 'Law Firm Renovation Rotes Schloss' },
+    category: 'commercial',
+    location: 'Zürich, CH',
+    year: 2023,
+    client: { de: 'Anwaltskanzlei Rotes Schloss', en: 'Law Firm Rotes Schloss' },
+    status: { de: 'Realisiert', en: 'Completed' },
+    description: {
+      de: 'Sorgfältige Sanierung einer historischen Anwaltskanzlei im Zürcher Altbau — Erhalt des Stuckdecken-Ornaments und der originalen Kassettenböden bei zeitgemässer Haustechnik.',
+      en: 'Careful renovation of a historic law firm in a Zurich old building — preserving ornate stucco ceilings and original parquet floors while integrating modern building services.'
+    },
+    longDescription: {
+      de: 'Das Rote Schloss in Zürich ist ein prächtiges Beispiel gründerzeitlicher Architektur. Die Sanierung stellte die Herausforderung, den historischen Charakter des Gebäudes vollständig zu erhalten und gleichzeitig die Anforderungen an eine moderne Anwaltskanzlei zu erfüllen. Besonderes Augenmerk galt den original erhaltenen Stuckaturen, den farbigen Kassettenparkettböden sowie den historischen Doppeltüren. Die neue Haustechnik — darunter eine diskrete Bodenheizung mit massgeschneiderten Holzgittern — wurde unsichtbar integriert.',
+      en: 'The Rotes Schloss in Zurich is a magnificent example of Gründerzeit architecture. The renovation faced the challenge of fully preserving the historic character of the building while meeting the requirements of a modern law firm. Particular attention was paid to the original preserved stucco work, the coloured marquetry parquet floors, and the historic double doors. The new building services — including a discreet underfloor heating system with custom wooden grilles — were integrated invisibly.'
+    },
+    coverImage: '/images/projects/rotes-schloss/cover.jpg',
+    images: [
+      '/images/projects/rotes-schloss/bild-2.jpg',
+      '/images/projects/rotes-schloss/bild-3.jpg',
+      '/images/projects/rotes-schloss/bild-4.jpg',
+      '/images/projects/rotes-schloss/bild-5.jpg',
+    ],
+    featured: true
+  },
+  {
+    id: '2',
     slug: 'wohnquartier-seehof',
     title: { de: 'Wohnquartier Seehof', en: 'Seehof Residential Quarter' },
     category: 'residential',
