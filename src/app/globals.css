@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap');
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #1c1917;
+  --font-main: 'DM Sans', system-ui, -apple-system, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1;
 }
 
 html {
@@ -19,6 +21,6 @@ html {
 }
 
 ::selection {
-  background: #1c1917;
+  background: #cc1122;
   color: #fff;
 }
