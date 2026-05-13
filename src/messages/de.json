@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "projects": "Projekte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "toggleMenu": "Menü"
+  },
+  "home": {
+    "heroTagline": "Architektur, die Räume schafft,\ndie Menschen bewegen.",
+    "heroSubtitle": "Wir planen und realisieren nachhaltige Architektur für eine lebenswerte Zukunft.",
+    "scrollDown": "Scrollen",
+    "featuredProjects": "Ausgewählte Projekte",
+    "allProjects": "Alle Projekte ansehen",
+    "aboutTitle": "Über Cityplan AG",
+    "aboutText": "Cityplan AG ist ein Schweizer Architekturbüro, das sich auf nachhaltige Stadt- und Gebäudeplanung spezialisiert hat. Wir verbinden gestalterischen Anspruch mit technischer Präzision und sozialer Verantwortung.",
+    "aboutLink": "Mehr erfahren",
+    "servicesTitle": "Leistungen",
+    "services": {
+      "architecture": "Architektur",
+      "architectureDesc": "Entwurf und Realisierung von Wohn-, Gewerbe- und Industriebauten.",
+      "urban": "Stadtplanung",
+      "urbanDesc": "Konzepte für nachhaltige, lebenswerte Stadtquartiere.",
+      "interior": "Innenarchitektur",
+      "interiorDesc": "Gestaltung von Innenräumen mit Funktionalität und Ästhetik.",
+      "consulting": "Beratung",
+      "consultingDesc": "Fachkundige Begleitung in allen Phasen Ihres Bauvorhabens."
+    },
+    "contactCta": "Lassen Sie uns\nIhr Projekt besprechen.",
+    "contactLink": "Kontakt aufnehmen"
+  },
+  "projects": {
+    "title": "Projekte",
+    "subtitle": "Eine Auswahl unserer realisierten Bauten und Planungen.",
+    "all": "Alle",
+    "residential": "Wohnen",
+    "commercial": "Gewerbe",
+    "urban": "Stadtplanung",
+    "public": "Öffentlich",
+    "viewProject": "Projekt ansehen"
+  },
+  "project": {
+    "category": "Kategorie",
+    "location": "Ort",
+    "year": "Jahr",
+    "client": "Auftraggeber",
+    "area": "Fläche",
+    "status": "Status",
+    "backToProjects": "Zurück zu Projekten"
+  },
+  "about": {
+    "title": "Über uns",
+    "subtitle": "Wir gestalten Räume, die Menschen inspirieren.",
+    "studioTitle": "Das Büro",
+    "studioText1": "Cityplan AG wurde mit dem Ziel gegründet, Architektur zu schaffen, die sowohl ästhetisch überzeugt als auch gesellschaftliche und ökologische Verantwortung trägt. Unser interdisziplinäres Team verbindet Erfahrung mit innovativem Denken.",
+    "studioText2": "Wir arbeiten eng mit unseren Auftraggebern zusammen – von der ersten Idee bis zur Fertigstellung. Dabei begleiten wir Projekte jeder Größenordnung mit demselben Engagement und derselben Sorgfalt.",
+    "teamTitle": "Team",
+    "valuesTitle": "Unsere Werte",
+    "values": {
+      "sustainability": "Nachhaltigkeit",
+      "sustainabilityDesc": "Wir planen ressourcenschonend und mit Blick auf kommende Generationen.",
+      "quality": "Qualität",
+      "qualityDesc": "Höchste gestalterische und bauliche Standards in jedem Projekt.",
+      "collaboration": "Zusammenarbeit",
+      "collaborationDesc": "Enge Partnerschaft mit Bauherren, Nutzern und Fachplanern.",
+      "innovation": "Innovation",
+      "innovationDesc": "Mut zu neuen Ideen und technologischen Möglichkeiten."
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir freuen uns auf Ihre Nachricht.",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "formName": "Name",
+    "formEmail": "E-Mail-Adresse",
+    "formProject": "Projektbeschreibung",
+    "formMessage": "Ihre Nachricht",
+    "formSend": "Nachricht senden",
+    "formSuccess": "Vielen Dank! Wir melden uns bald.",
+    "formNamePlaceholder": "Ihr Name",
+    "formEmailPlaceholder": "ihre@email.ch",
+    "formProjectPlaceholder": "Art des Projekts (optional)",
+    "formMessagePlaceholder": "Beschreiben Sie Ihr Vorhaben..."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "imprint": "Impressum"
+  }
+}
