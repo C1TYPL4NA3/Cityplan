@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { projects } from '@/lib/projects';
+import { getAllProjects } from '@/lib/projects';
 import ProjectsFilter from '@/components/ProjectsFilter';
 import type { Metadata } from 'next';
 
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
           <p className="text-stone-500 text-lg max-w-xl">{t('subtitle')}</p>
         </header>
 
-        <ProjectsFilter projects={projects} />
+        <ProjectsFilter projects={getAllProjects()} />
       </div>
     </div>
   );

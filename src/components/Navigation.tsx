@@ -16,8 +16,7 @@ export default function Navigation() {
   const alternatePath = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
   useEffect(() => {
-    if (menuOpen) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = '';
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
@@ -29,90 +28,88 @@ export default function Navigation() {
 
   return (
     <>
-      {/* ── Fixed header bar ─────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 md:h-20">
-
-        {/* Logo */}
-        <Link
-          href={`/${locale}`}
-          onClick={() => setMenuOpen(false)}
-          className="flex items-center shrink-0"
-        >
-          <div className={`transition-all duration-300 ${menuOpen ? 'brightness-0 invert' : ''}`}>
-            <Image
-              src="/images/logo.svg"
-              alt="Cityplan AG"
-              width={180}
-              height={50}
-              priority
-              className="h-10 w-auto md:h-12"
-            />
-          </div>
+      {/* Header bar */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 h-16 md:h-18">
+        <Link href={`/${locale}`} onClick={() => setMenuOpen(false)} className="flex items-center shrink-0">
+          <Image
+            src="/images/logo.svg"
+            alt="Cityplan AG"
+            width={160}
+            height={44}
+            priority
+            className="h-9 md:h-11 w-auto"
+          />
         </Link>
 
-        {/* Hamburger button — always visible */}
+        {/* Hamburger / Close button */}
         <button
-          aria-label={t('toggleMenu')}
+          aria-label={menuOpen ? 'Schliessen' : t('toggleMenu')}
           onClick={() => setMenuOpen(v => !v)}
-          className="relative z-[60] w-12 h-12 flex items-center justify-center bg-[#cc1122] hover:bg-[#a80e1b] transition-colors duration-200"
+          className="relative z-[60] w-12 h-12 flex items-center justify-center"
+          style={{ background: 'var(--terra)' }}
         >
-          <div className="w-5 flex flex-col gap-[5px]">
-            <span className={`block h-px bg-white transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
-            <span className={`block h-px bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block h-px bg-white transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
-          </div>
+          {menuOpen ? (
+            /* × close icon */
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <line x1="1" y1="1" x2="17" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+              <line x1="17" y1="1" x2="1" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          ) : (
+            /* ≡ hamburger icon */
+            <div className="flex flex-col gap-[5px]">
+              <span className="block w-5 h-0.5 bg-white" />
+              <span className="block w-5 h-0.5 bg-white" />
+              <span className="block w-5 h-0.5 bg-white" />
+            </div>
+          )}
         </button>
       </header>
 
-      {/* ── Menu overlay ─────────────────────────────────── */}
-      {/* Dark backdrop */}
+      {/* Backdrop */}
       <div
         onClick={() => setMenuOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-500 ${
+        className={`fixed inset-0 z-40 bg-black/30 transition-opacity duration-500 ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       />
 
       {/* Side panel */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-50 w-full md:w-[480px] bg-[#cc1122] flex flex-col transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-full md:w-[44vw] max-w-[560px] flex flex-col transition-transform duration-500 ease-in-out ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        style={{ background: 'var(--terra)' }}
       >
-        {/* Panel header — close button area */}
-        <div className="h-16 md:h-20 flex items-center justify-end px-6 md:px-12 shrink-0">
-          {/* Close button placeholder — the header button is on top */}
+        {/* Language row */}
+        <div className="h-16 md:h-18 flex items-center justify-end px-6 md:px-10 gap-6 shrink-0">
+          <Link
+            href={alternatePath}
+            onClick={() => setMenuOpen(false)}
+            className="text-white/70 text-sm font-medium hover:text-white transition-colors"
+          >
+            {otherLocale === 'de' ? 'Deutsch' : 'English'}
+          </Link>
         </div>
 
         {/* Nav links */}
-        <nav className="flex flex-col justify-center flex-1 px-12 md:px-16 gap-2 pb-16">
-          {navLinks.map((link, i) => (
+        <nav className="flex flex-col justify-center flex-1 px-10 md:px-14 gap-0 pb-10">
+          {navLinks.map(link => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-white text-4xl md:text-5xl font-light tracking-tight hover:opacity-60 transition-opacity duration-200 py-3 border-b border-white/20"
-              style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
+              className="text-white text-5xl md:text-6xl font-bold tracking-tight py-4 border-b border-white/20 hover:opacity-60 transition-opacity leading-tight"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Language + bottom links */}
-        <div className="px-12 md:px-16 pb-12 shrink-0 flex items-center justify-between">
-          <Link
-            href={alternatePath}
-            onClick={() => setMenuOpen(false)}
-            className="text-white/60 text-sm tracking-widest uppercase hover:text-white transition-colors border-b border-white/30 pb-0.5"
-          >
-            {otherLocale.toUpperCase()}
-          </Link>
-          <div className="flex gap-6 text-white/40 text-xs tracking-widest uppercase">
-            <a href="mailto:info@cityplan.ch" className="hover:text-white transition-colors">
-              info@cityplan.ch
-            </a>
-          </div>
+        {/* Footer */}
+        <div className="px-10 md:px-14 pb-10 shrink-0 text-white/50 text-sm">
+          <a href="mailto:info@cityplan.ch" className="hover:text-white transition-colors">
+            info@cityplan.ch
+          </a>
         </div>
       </div>
     </>

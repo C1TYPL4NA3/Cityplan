@@ -2,11 +2,11 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import { getProjectBySlug, projects } from '@/lib/projects';
+import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
-  return projects.map(p => ({ slug: p.slug }));
+  return getAllProjects().map(p => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({

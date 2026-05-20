@@ -9,141 +9,99 @@ export default function HomePage() {
   const locale = useLocale() as 'de' | 'en';
   const featured = getFeaturedProjects();
 
-  const services = [
-    { key: 'architecture', icon: '○' },
-    { key: 'urban', icon: '△' },
-    { key: 'interior', icon: '□' },
-    { key: 'consulting', icon: '◇' },
-  ] as const;
-
   return (
     <>
-      {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative h-screen min-h-[600px] flex flex-col justify-end pb-16 px-6 md:px-12 overflow-hidden">
-        {/* Background image placeholder — replace with real hero image */}
-        <div className="absolute inset-0 bg-stone-800">
+      {/* ── HERO ── */}
+      <section className="relative h-screen min-h-[600px] overflow-hidden">
+        <div className="absolute inset-0 bg-stone-700">
           <Image
             src="/images/hero.svg"
             alt="Cityplan AG"
             fill
-            className="object-cover opacity-70"
+            className="object-cover opacity-80"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-stone-900/20 to-transparent" />
         </div>
-
-        <div className="relative max-w-5xl">
-          <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight whitespace-pre-line mb-6">
-            {t('heroTagline')}
-          </h1>
-          <p className="text-white/70 text-lg md:text-xl max-w-xl">
-            {t('heroSubtitle')}
-          </p>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
-          <span className="text-xs tracking-widest uppercase">{t('scrollDown')}</span>
-          <div className="w-px h-12 bg-white/20 animate-pulse" />
+        {/* Scroll arrow bottom right — aart.dk style */}
+        <div className="absolute bottom-6 right-6 w-10 h-10 border border-white/50 flex items-center justify-center">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1v12M1 7l6 6 6-6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </section>
 
-      {/* ── FEATURED PROJECTS ────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12">
+      {/* ── FEATURED PROJECTS ── */}
+      <section className="py-20 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-12">
-            <h2 className="text-3xl md:text-4xl font-light text-stone-900 tracking-tight">
+          <div className="flex items-end justify-between mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
               {t('featuredProjects')}
             </h2>
             <Link
               href={`/${locale}/projekte`}
-              className="hidden md:inline-flex items-center gap-2 text-sm tracking-widest uppercase text-stone-500 hover:text-stone-900 transition-colors border-b border-stone-300 pb-0.5 hover:border-stone-900"
+              className="hidden md:block text-sm font-medium text-stone-500 hover:text-[#1a1a1a] transition-colors underline underline-offset-4"
             >
-              {t('allProjects')} →
+              {t('allProjects')}
             </Link>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featured.map((project, i) => (
               <ProjectCard key={project.id} project={project} priority={i === 0} />
             ))}
           </div>
-
-          <div className="mt-10 md:hidden">
-            <Link
-              href={`/${locale}/projekte`}
-              className="inline-flex items-center gap-2 text-sm tracking-widest uppercase text-stone-500 hover:text-stone-900 transition-colors border-b border-stone-300 pb-0.5"
-            >
-              {t('allProjects')} →
+          <div className="mt-8 md:hidden">
+            <Link href={`/${locale}/projekte`} className="text-sm font-medium underline underline-offset-4 text-stone-500">
+              {t('allProjects')}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── ABOUT TEASER ─────────────────────────────────── */}
-      <section className="py-24 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      {/* ── ABOUT TEASER ── */}
+      <section className="py-20 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-light text-stone-900 tracking-tight mb-6">
-              {t('aboutTitle')}
-            </h2>
-            <p className="text-stone-600 text-lg leading-relaxed mb-8">
-              {t('aboutText')}
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">{t('aboutTitle')}</h2>
+            <p className="text-stone-600 text-lg leading-relaxed mb-8">{t('aboutText')}</p>
             <Link
               href={`/${locale}/ueber-uns`}
-              className="inline-flex items-center gap-2 text-sm tracking-widest uppercase text-stone-900 border-b border-stone-900 pb-0.5 hover:opacity-60 transition-opacity"
+              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#1a1a1a] underline underline-offset-4 hover:opacity-60 transition-opacity"
             >
-              {t('aboutLink')} →
+              {t('aboutLink')}
             </Link>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden bg-stone-200">
-            <Image
-              src="/images/about-teaser.svg"
-              alt="Cityplan AG Büro"
-              fill
-              className="object-cover"
-            />
+            <Image src="/images/about-teaser.svg" alt="Cityplan AG" fill className="object-cover" />
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES ─────────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12">
+      {/* ── SERVICES ── */}
+      <section className="py-20 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light text-stone-900 tracking-tight mb-16">
-            {t('servicesTitle')}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-l border-stone-200">
-            {services.map(({ key, icon }) => (
-              <div
-                key={key}
-                className="border-r border-t border-b border-stone-200 p-8 hover:bg-stone-50 transition-colors"
-              >
-                <span className="text-2xl text-stone-300 block mb-6">{icon}</span>
-                <h3 className="text-stone-900 font-medium mb-3">
-                  {t(`services.${key}`)}
-                </h3>
-                <p className="text-stone-500 text-sm leading-relaxed">
-                  {t(`services.${key}Desc`)}
-                </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-14">{t('servicesTitle')}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200">
+            {(['architecture','urban','interior','consulting'] as const).map(key => (
+              <div key={key} className="bg-white p-8 hover:bg-stone-50 transition-colors">
+                <h3 className="font-bold text-[#1a1a1a] mb-3">{t(`services.${key}`)}</h3>
+                <p className="text-stone-500 text-sm leading-relaxed">{t(`services.${key}Desc`)}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CONTACT CTA ──────────────────────────────────── */}
-      <section className="bg-stone-900 text-white py-32 px-6 md:px-12">
+      {/* ── CONTACT CTA ── */}
+      <section className="py-28 px-6 md:px-10" style={{ background: 'var(--terra)' }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight whitespace-pre-line max-w-xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-xl whitespace-pre-line">
             {t('contactCta')}
           </h2>
           <Link
             href={`/${locale}/kontakt`}
-            className="inline-flex items-center gap-3 text-sm tracking-widest uppercase border border-white/40 px-8 py-4 hover:bg-white hover:text-stone-900 transition-all duration-300 shrink-0"
+            className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest border-2 border-white text-white px-8 py-4 hover:bg-white hover:text-[#b85535] transition-all duration-300 shrink-0"
           >
-            {t('contactLink')} →
+            {t('contactLink')}
           </Link>
         </div>
       </section>
