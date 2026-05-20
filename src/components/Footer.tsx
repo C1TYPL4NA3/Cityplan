@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <Image
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="Cityplan AG"
             width={150}
             height={42}

@@ -32,12 +32,12 @@ export default function Navigation() {
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 h-16 md:h-18">
         <Link href={`/${locale}`} onClick={() => setMenuOpen(false)} className="flex items-center shrink-0">
           <Image
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="Cityplan AG"
-            width={160}
-            height={44}
+            width={220}
+            height={60}
             priority
-            className="h-9 md:h-11 w-auto"
+            className="h-10 md:h-12 w-auto"
           />
         </Link>
 
