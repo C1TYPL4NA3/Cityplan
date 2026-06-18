@@ -15,12 +15,13 @@ export default function HomePage() {
       <section className="relative h-screen min-h-[600px] overflow-hidden">
         <div className="absolute inset-0 bg-stone-700">
           <Image
-            src="/images/hero.svg"
-            alt="Cityplan AG"
+            src="/images/hero.jpg"
+            alt="Cityplan AG — Zürich"
             fill
-            className="object-cover opacity-80"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
         {/* Scroll arrow bottom right — aart.dk style */}
         <div className="absolute bottom-6 right-6 w-10 h-10 border border-white/50 flex items-center justify-center">
