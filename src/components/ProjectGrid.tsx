@@ -6,37 +6,37 @@ import type { Project } from '@/lib/projects';
 
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
   return (
-    <div style={{ padding: '20px 16px' }}>
+    <>
       <style>{`
-        .proj-item { display: block; break-inside: avoid; margin-bottom: 6px; overflow: hidden; }
-        .proj-img { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #e8e8e8; }
-        .proj-img img { transition: transform 0.4s ease; }
-        .proj-item:hover .proj-img img { transform: scale(1.03); }
+        .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 3px; }
+        @media (max-width: 900px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .proj-grid { grid-template-columns: 1fr; } }
+        .proj-cell { position: relative; aspect-ratio: 4/3; overflow: hidden; background: #e0e0e0; display: block; }
+        .proj-cell img { transition: transform 0.5s ease; }
+        .proj-cell:hover img { transform: scale(1.04); }
       `}</style>
-      <div style={{ columns: '3 280px', gap: 6 }}>
+      <div className="proj-grid">
         {projects.map(project => (
-          <Link key={project.id} href={`/projekte/${project.slug}`} className="proj-item">
-            <div className="proj-img">
-              {project.coverImage ? (
-                <Image
-                  src={project.coverImage}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              ) : (
-                <div style={{ width: '100%', height: '100%', background: '#ddd', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999', fontSize: 12 }}>
-                  kein Bild
-                </div>
-              )}
-            </div>
+          <Link key={project.id} href={`/projekte/${project.slug}`} className="proj-cell">
+            {project.coverImage ? (
+              <Image
+                src={project.coverImage}
+                alt={project.title}
+                fill
+                sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
+                style={{ objectFit: 'cover' }}
+              />
+            ) : (
+              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#aaa', fontSize: 12 }}>
+                kein Bild
+              </div>
+            )}
           </Link>
         ))}
         {projects.length === 0 && (
-          <p style={{ color: '#999', fontSize: 13, padding: 20 }}>Keine Projekte in dieser Kategorie.</p>
+          <p style={{ gridColumn: '1/-1', padding: 24, color: '#999', fontSize: 13 }}>Keine Projekte.</p>
         )}
       </div>
-    </div>
+    </>
   );
 }
