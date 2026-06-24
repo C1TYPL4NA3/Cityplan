@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "slug": "rotes-schloss",
+    "title": "Sanierung Anwaltskanzlei Rotes Schloss",
+    "category": "gewerbe",
+    "location": "Zürich",
+    "year": 2023,
+    "status": "Realisiert",
+    "description": "Umfassende Sanierung einer historischen Anwaltskanzlei im Zürcher Stadtgebiet. Das denkmalgeschützte Gebäude wurde behutsam modernisiert und den zeitgemässen Anforderungen angepasst.",
+    "client": "Privat",
+    "area": "850 m²",
+    "coverImage": "/images/projects/rotes-schloss/cover.jpg",
+    "images": [],
+    "order": 0,
+    "featured": true
+  }
+]
