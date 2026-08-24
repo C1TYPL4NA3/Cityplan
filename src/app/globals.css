@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;700&family=Inter:wght@300;400;500;700&display=swap');
 @import "tailwindcss";
 
+:root {
+  --content-max-width: 1460px;
+  --page-gutter: 30px;
+  --header-bottom-space: 29px;
+  --nav-width: 240px;
+  --project-row-gap: 35px;
+  --project-col-gap: 39px;
+  --project-aspect-ratio: 4 / 3;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
