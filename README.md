@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cityplan AG Zürich — Website
 
-## Getting Started
+Laravel-Anwendung (Blade, Filament-Admin, MySQL/SQLite) für die Website der
+Cityplan AG Zürich. Layout und Design sind in Blade/CSS fest verdrahtet;
+Inhalte, Projekte, Jobs, Kontaktangaben sowie ausgewählte globale
+Design-Einstellungen (Schriftart, Schriftgrössen, Farben) werden über den
+Adminbereich unter `/admin` verwaltet.
 
-First, run the development server:
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+composer install
+npm install
+
+cp .env.example .env
+php artisan key:generate
+
+# SQLite ist der Standard (siehe .env: DB_CONNECTION=sqlite). Für MySQL/MariaDB
+# stattdessen DB_CONNECTION, DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD setzen.
+touch database/database.sqlite
+
+php artisan migrate --seed
+php artisan storage:link
+
+npm run build   # oder: npm run dev
+php artisan serve
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Admin-Login danach unter `/admin` mit dem per `php artisan make:filament-user`
+angelegten Konto.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Hinweis zu den Platzhalterdaten
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Die mitgelieferten Beispielprojekte, Projekttexte und Bilder stammen 1:1 aus
+den ursprünglich gelieferten HTML-Designvorlagen (dort teils bereits als
+vorläufig gekennzeichnet, z. B. „20XX–20XX", „[Angabe Bauherrschaft]"). Sie
+dienen als Startpunkt und sollten im Adminbereich durch echte Projektdaten
+ersetzt werden. Es wurden keine Firmendaten, Bauherrschaften oder Jahreszahlen
+frei erfunden.
 
-## Learn More
+## Struktur
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/Models` — Eloquent-Modelle
+- `app/Filament/Resources`, `app/Filament/Pages` — Adminbereich
+- `resources/views` — Blade-Layouts, Components, Seiten
+- `resources/css/app.css` — Design-Master-Stylesheet (konsumiert CSS-Variablen
+  aus den Design-Einstellungen, siehe `resources/views/partials/design-tokens.blade.php`)
+- `database/seeders/DatabaseSeeder.php` — Platzhalterinhalte
