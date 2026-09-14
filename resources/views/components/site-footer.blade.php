@@ -6,15 +6,8 @@
             <strong>{{ $setting->company_name }}</strong>
             <p>{{ $setting->tagline ?: 'Architektur & Generalunternehmung' }}</p>
             <p>{{ $setting->city }}</p>
-        </div>
-
-        <div>
-            <h3>Kontakt</h3>
-            <ul class="site-footer__links">
-                @if($setting->address)<li>{{ $setting->address }}</li>@endif
-                @if($setting->phone)<li><a href="tel:{{ preg_replace('/\s+/', '', $setting->phone) }}">{{ $setting->phone }}</a></li>@endif
-                @if($setting->email)<li><a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></li>@endif
-            </ul>
+            @if($setting->email)<p><a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></p>@endif
+            @if($setting->website)<p><a href="https://{{ preg_replace('#^https?://#', '', $setting->website) }}" target="_blank" rel="noopener">{{ $setting->website }}</a></p>@endif
         </div>
 
         @if(!empty($setting->footer_leistungen))
@@ -37,14 +30,18 @@
                 <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
             </ul>
         </div>
+
+        <div>
+            <h3>Rechtliches</h3>
+            <ul class="site-footer__links">
+                <li><a href="{{ route('impressum') }}">Impressum</a></li>
+                <li><a href="{{ route('datenschutz') }}">Datenschutz</a></li>
+            </ul>
+        </div>
     </div>
 
     <div class="site-footer__bottom">
-        <span>&copy; {{ now()->year }} {{ $setting->company_name }}</span>
-        <span>
-            <a href="{{ route('impressum') }}">Impressum</a>
-            &nbsp;·&nbsp;
-            <a href="{{ route('datenschutz') }}">Datenschutz</a>
-        </span>
+        <span>&copy; <span class="site-footer__brand-name">{{ $setting->company_name }}</span></span>
+        <span>{{ $setting->tagline ?: 'Architektur & Generalunternehmung' }} · {{ $setting->city }}</span>
     </div>
 </footer>

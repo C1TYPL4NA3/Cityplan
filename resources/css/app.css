@@ -374,10 +374,8 @@ img {
 
 .site-footer h3 {
     margin: 0 0 18px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
     color: #fff;
 }
 
@@ -388,11 +386,23 @@ img {
     margin: 0 0 6px;
 }
 
+.site-footer p a {
+    color: #ddd4ce;
+}
+
+.site-footer p a:hover {
+    color: #fff;
+}
+
 .site-footer__brand strong {
     display: block;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 800;
     margin-bottom: 10px;
+}
+
+.site-footer__brand strong::first-letter {
+    text-transform: lowercase;
 }
 
 .site-footer__links {
@@ -425,6 +435,14 @@ img {
     gap: 12px;
     font-size: 12px;
     color: #cbbfb7;
+}
+
+.site-footer__brand-name {
+    display: inline-block;
+}
+
+.site-footer__brand-name::first-letter {
+    text-transform: lowercase;
 }
 
 .site-footer__bottom a {
