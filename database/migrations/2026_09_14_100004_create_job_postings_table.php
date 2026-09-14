@@ -11,13 +11,17 @@ return new class extends Migration
         Schema::create('job_postings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('pensum')->nullable();
+            $table->string('employment_type')->nullable(); // "Festanstellung"
+            $table->string('pensum')->nullable(); // "Teilzeit 60–80 %"
             $table->string('location')->nullable();
             $table->string('start_text')->nullable(); // "Eintritt"
-            $table->text('description')->nullable();
-            $table->text('requirements')->nullable();
-            $table->text('benefits')->nullable();
+            $table->text('lead')->nullable();
+            $table->json('tasks')->nullable(); // "Ihre Aufgaben" — list of bullet strings
+            $table->json('profile_items')->nullable(); // "Ihr Profil" — list of bullet strings
+            $table->json('benefits')->nullable(); // "Wir bieten Ihnen" — list of {title, text}
             $table->text('application_info')->nullable();
+            $table->string('hero_image')->nullable();
+            $table->string('hero_image_alt')->nullable();
             $table->string('status')->default('draft'); // draft, published
             $table->unsignedInteger('order')->default(0);
             $table->timestamps();

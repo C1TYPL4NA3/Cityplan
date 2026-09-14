@@ -5,6 +5,7 @@ use App\Http\Controllers\SitemapController;
 use App\Models\ContactContent;
 use App\Models\HomeContent;
 use App\Models\JobPosting;
+use App\Models\JobsPageContent;
 use App\Models\ProfileContent;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +26,9 @@ Route::get('/projekte/{project:slug}', [ProjekteController::class, 'show'])->nam
 
 Route::get('/jobs', function () {
     $jobs = JobPosting::query()->published()->ordered()->get();
+    $pageContent = JobsPageContent::current();
 
-    return view('pages.jobs', compact('jobs'));
+    return view('pages.jobs', compact('jobs', 'pageContent'));
 })->name('jobs');
 
 Route::get('/kontakt', function () {

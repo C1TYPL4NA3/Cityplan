@@ -8,15 +8,25 @@ class JobPosting extends Model
 {
     protected $fillable = [
         'title',
+        'employment_type',
         'pensum',
         'location',
         'start_text',
-        'description',
-        'requirements',
+        'lead',
+        'tasks',
+        'profile_items',
         'benefits',
         'application_info',
+        'hero_image',
+        'hero_image_alt',
         'status',
         'order',
+    ];
+
+    protected $casts = [
+        'tasks' => 'array',
+        'profile_items' => 'array',
+        'benefits' => 'array',
     ];
 
     public function scopePublished($query)

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\ContactContent;
 use App\Models\HomeContent;
 use App\Models\JobPosting;
+use App\Models\JobsPageContent;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Models\ProjectImage;
@@ -30,6 +31,8 @@ class DatabaseSeeder extends Seeder
         $this->seedContactContent();
         $this->seedProjectsPageContent();
         $this->seedProjects();
+        $this->seedJobsPageContent();
+        $this->seedJobs();
     }
 
     private function seedSiteSettings(): void
@@ -345,5 +348,65 @@ class DatabaseSeeder extends Seeder
                 );
             }
         }
+    }
+
+    private function seedJobsPageContent(): void
+    {
+        JobsPageContent::current()->update([
+            'hero_kicker' => 'Architektur & Generalunternehmung',
+            'hero_slogan_line1' => 'Wir planen.',
+            'hero_slogan_line2' => 'Wir bauen.',
+            'hero_slogan_line3' => 'Wir realisieren.',
+            'hero_intro' => 'cityplan AG Zürich steht für Architektur und Generalunternehmung mit Anspruch. Wir realisieren Hochbauprojekte in Zürich und Umgebung – von der ersten Idee bis zur erfolgreichen Übergabe.',
+            'hero_image' => 'seed/jobs/bauleiter-hochhaus.png',
+            'hero_image_alt' => 'Modernes Hochbauprojekt',
+            'empty_state_text' => 'Aktuell sind keine offenen Stellen ausgeschrieben. Interessierte dürfen sich gerne initiativ bewerben.',
+        ]);
+    }
+
+    private function seedJobs(): void
+    {
+        JobPosting::updateOrCreate(
+            ['title' => 'Bauleiter Hochbau (m/w/d)'],
+            [
+                'employment_type' => 'Festanstellung',
+                'pensum' => 'Teilzeit 60–80 %',
+                'location' => 'Zürich, zentrale Lage',
+                'start_text' => 'Nach Vereinbarung',
+                'lead' => 'Bei uns erwarten Sie vielseitige und interessante Bauprojekte, ein hoher Grad an Eigenverantwortung sowie ein kollegiales und wertschätzendes Arbeitsumfeld im Herzen von Zürich.',
+                'tasks' => [
+                    ['item' => 'Selbstständige Leitung und Steuerung von Hochbauprojekten über alle Phasen – von der Kostenplanung bis zur Schlussabrechnung'],
+                    ['item' => 'Koordination und Überwachung der Bauausführung sowie der gesamten Baustellenorganisation'],
+                    ['item' => 'Sicherstellung der Projektziele hinsichtlich Kosten, Qualität und Termine'],
+                    ['item' => 'Erstellung und Bearbeitung von Submissionsunterlagen, Terminplänen, Kostenvoranschlägen, Vergabeanträgen und Werkverträgen'],
+                    ['item' => 'Durchführung und Leitung von Bau- und Unternehmerbesprechungen'],
+                    ['item' => 'Bauleitung und Qualitätskontrolle vor Ort'],
+                    ['item' => 'Koordination und aktive Steuerung der beteiligten Unternehmer und Fachplaner'],
+                    ['item' => 'Prüfung von Offerten, Ausmassen, Rechnungen und Nachträgen'],
+                    ['item' => 'Begleitung von Abnahmen, Mängelbehebung und Projektabschluss'],
+                    ['item' => 'Professionelle Kommunikation und Abstimmung mit Bauherrschaften, Fachplanern, Unternehmern und Behörden'],
+                ],
+                'profile_items' => [
+                    ['item' => 'Abgeschlossene Ausbildung als Hochbauzeichner/in, Techniker/in HF Hochbau oder eine vergleichbare Qualifikation'],
+                    ['item' => 'Mehrjährige Erfahrung in der Bauleitung von Hochbauprojekten in der Schweiz'],
+                    ['item' => 'Fundierte Kenntnisse der SIA-Normen sowie der schweizerischen Bau- und Planungsprozesse'],
+                    ['item' => 'Erfahrung in Ausschreibung, Vergabe, Terminplanung und Bauadministration'],
+                    ['item' => 'Sicheres Auftreten gegenüber Unternehmern, Fachplanern und Auftraggebern'],
+                    ['item' => 'Durchsetzungsvermögen, Verhandlungsgeschick und organisatorische Stärke'],
+                    ['item' => 'Selbstständige, strukturierte und lösungsorientierte Arbeitsweise'],
+                    ['item' => 'Teamorientierte und kommunikative Persönlichkeit'],
+                    ['item' => 'Hohe Verantwortungs- und Qualitätsansprüche'],
+                ],
+                'benefits' => [
+                    ['title' => 'Bauprojekte', 'text' => 'Spannende und abwechslungsreiche Projekte mit grossem Gestaltungsspielraum'],
+                    ['title' => 'Arbeitsplatz', 'text' => 'Moderner Arbeitsplatz an zentraler Lage in Zürich'],
+                    ['title' => 'Eigenverantwortung', 'text' => 'Kurze Entscheidungswege und selbstständiges Arbeiten'],
+                    ['title' => 'Arbeitsbedingungen', 'text' => '25 Ferientage pro Jahr und Teilzeitpensum 60–80 %'],
+                ],
+                'application_info' => 'Sie sind ein erfahrener Bauleiter und suchen eine neue Herausforderung? Dann freuen wir uns auf Ihre vollständigen Bewerbungsunterlagen.',
+                'status' => 'published',
+                'order' => 1,
+            ]
+        );
     }
 }
