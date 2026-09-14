@@ -10,9 +10,14 @@
     "description": "Umfassende Sanierung einer historischen Anwaltskanzlei im Zürcher Stadtgebiet. Das denkmalgeschützte Gebäude wurde behutsam modernisiert und den zeitgemässen Anforderungen angepasst.",
     "client": "Privat",
     "area": "850 m²",
-    "coverImage": "/images/projects/rotes-schloss/cover.jpg",
+    "coverImage": "",
     "images": [],
     "order": 0,
-    "featured": true
+    "featured": true,
+    "intro": "Eine behutsame Sanierung mit den wichtigsten Angaben zum Bauobjekt.",
+    "highlight": "Sanierung, die Geschichte und heutige Ansprüche verbindet.",
+    "objekt": "Anwaltskanzlei, denkmalgeschütztes Gebäude",
+    "leistungen": "Sanierung, Bauleitung",
+    "realisation": "2022–2023"
   }
 ]

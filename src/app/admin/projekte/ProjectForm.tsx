@@ -1,16 +1,16 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import type { Project } from '@/lib/projects';
-
-const CATEGORIES = ['wohnen', 'gewerbe', 'oeffentlich', 'wettbewerbe'];
+import { CATEGORIES } from '@/lib/categories';
+import type { Project } from '@/lib/categories';
 
 const EMPTY: Omit<Project, 'id' | 'order'> = {
-  slug: '', title: '', category: 'wohnen',
+  slug: '', title: '', category: CATEGORIES[0].value,
   location: '', year: new Date().getFullYear(),
   status: 'Realisiert', description: '',
   client: '', area: '',
   coverImage: '', images: [], featured: false,
+  intro: '', highlight: '', objekt: '', leistungen: '', realisation: '',
 };
 
 export default function ProjectForm({ initial, id }: { initial?: Project; id?: string }) {
@@ -86,7 +86,7 @@ export default function ProjectForm({ initial, id }: { initial?: Project; id?: s
           <div>
             <label style={lbl}>Kategorie</label>
             <select style={inp} value={data.category} onChange={e => set('category', e.target.value)}>
-              {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
+              {CATEGORIES.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
             </select>
           </div>
           <div>
@@ -119,13 +119,40 @@ export default function ProjectForm({ initial, id }: { initial?: Project; id?: s
             <input style={inp} value={data.area ?? ''} onChange={e => set('area', e.target.value)} placeholder="1 200 m²" />
           </div>
         </div>
+        <div style={{ ...g2, marginTop: 14 }}>
+          <div>
+            <label style={lbl}>Objekt</label>
+            <input style={inp} value={data.objekt ?? ''} onChange={e => set('objekt', e.target.value)} placeholder="Mehrfamilienhaus, 24 Wohnungen" />
+          </div>
+          <div>
+            <label style={lbl}>Leistungen</label>
+            <input style={inp} value={data.leistungen ?? ''} onChange={e => set('leistungen', e.target.value)} placeholder="Architektur, Baumanagement" />
+          </div>
+        </div>
+        <div style={{ marginTop: 14 }}>
+          <label style={lbl}>Realisation (Zeitraum)</label>
+          <input style={inp} value={data.realisation ?? ''} onChange={e => set('realisation', e.target.value)} placeholder="2022–2023" />
+        </div>
       </div>
 
       {/* Beschreibung */}
       <div style={box}>
         <h2 style={{ fontSize: 14, fontWeight: 700, margin: '0 0 20px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Beschreibung</h2>
-        <textarea style={{ ...inp, height: 120, resize: 'vertical' }} value={data.description}
-          onChange={e => set('description', e.target.value)} />
+        <div style={{ marginBottom: 16 }}>
+          <label style={lbl}>Teasertext (neben dem Titel auf der Detailseite)</label>
+          <textarea style={{ ...inp, height: 70, resize: 'vertical' }} value={data.intro ?? ''}
+            onChange={e => set('intro', e.target.value)} />
+        </div>
+        <div style={{ marginBottom: 16 }}>
+          <label style={lbl}>Überschrift im Info-Block</label>
+          <input style={inp} value={data.highlight ?? ''} onChange={e => set('highlight', e.target.value)}
+            placeholder="Architektur, die den Aussenraum mitdenkt." />
+        </div>
+        <div>
+          <label style={lbl}>Projektbeschreibung</label>
+          <textarea style={{ ...inp, height: 120, resize: 'vertical' }} value={data.description}
+            onChange={e => set('description', e.target.value)} />
+        </div>
       </div>
 
       {/* Bilder */}
