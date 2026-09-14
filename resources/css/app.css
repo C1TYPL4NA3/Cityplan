@@ -1232,50 +1232,6 @@ img {
     }
 }
 
-/* ---------------------------------------------------------------------- */
-/* UMBAUEN                                                                 */
-/* ---------------------------------------------------------------------- */
-
-.umbau-hero {
-    display: grid;
-    grid-template-columns: 52% 48%;
-    min-height: 480px;
-    overflow: hidden;
-    border: 1px solid var(--color-line);
-    background: #fff;
-    max-width: var(--content-width);
-    margin: 58px auto 0;
-}
-
-.umbau-hero__content {
-    padding: 62px 58px 56px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.umbau-hero__lead {
-    max-width: 560px;
-    font-size: var(--body-size);
-    line-height: 1.5;
-    color: var(--color-text);
-}
-
-.umbau-hero__image {
-    min-height: 480px;
-    background-size: cover;
-    background-position: center;
-}
-
-@media (max-width: 960px) {
-    .umbau-hero {
-        grid-template-columns: 1fr;
-        margin-top: 24px;
-    }
-    .umbau-hero__image {
-        min-height: 330px;
-    }
-}
 
 /* ---------------------------------------------------------------------- */
 /* PROJEKTE — OVERVIEW                                                     */

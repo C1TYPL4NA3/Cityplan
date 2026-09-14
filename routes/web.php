@@ -6,7 +6,6 @@ use App\Models\ContactContent;
 use App\Models\HomeContent;
 use App\Models\JobPosting;
 use App\Models\ProfileContent;
-use App\Models\UmbauContent;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,12 +19,6 @@ Route::get('/profil', function () {
 
     return view('pages.profil', compact('content'));
 })->name('profil');
-
-Route::get('/umbauen', function () {
-    $content = UmbauContent::current();
-
-    return view('pages.umbauen', compact('content'));
-})->name('umbauen');
 
 Route::get('/projekte', [ProjekteController::class, 'index'])->name('projekte.index');
 Route::get('/projekte/{project:slug}', [ProjekteController::class, 'show'])->name('projekte.show');

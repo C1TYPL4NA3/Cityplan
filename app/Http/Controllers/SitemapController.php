@@ -12,7 +12,6 @@ class SitemapController extends Controller
         $staticRoutes = [
             ['url' => route('home'), 'priority' => '1.0'],
             ['url' => route('profil'), 'priority' => '0.8'],
-            ['url' => route('umbauen'), 'priority' => '0.6'],
             ['url' => route('projekte.index'), 'priority' => '0.9'],
             ['url' => route('jobs'), 'priority' => '0.5'],
             ['url' => route('kontakt'), 'priority' => '0.7'],

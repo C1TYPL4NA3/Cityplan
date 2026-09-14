@@ -12,7 +12,7 @@ views and is not editable through the admin.
 
 - `app/Models` — Eloquent models (Project, ProjectCategory, ProjectImage,
   JobPosting, SiteSetting, DesignSetting, HomeContent, ProfileContent,
-  ContactContent, UmbauContent)
+  ContactContent, ProjectsPageContent)
 - `app/Filament/Resources` and `app/Filament/Pages` — admin panel
 - `resources/views` — Blade layouts, components (header/footer), and pages
 - `resources/css/app.css` — design-master CSS, consuming CSS custom

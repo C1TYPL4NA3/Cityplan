@@ -12,7 +12,6 @@
 
         <nav class="site-nav" aria-label="Hauptnavigation">
             <a href="{{ route('projekte.index') }}" @class(['is-active' => request()->routeIs('projekte.*')])>Projekte</a>
-            <a href="{{ route('umbauen') }}" @class(['is-active' => request()->routeIs('umbauen')])>Umbauen</a>
             <a href="{{ route('profil') }}" @class(['is-active' => request()->routeIs('profil')])>Profil</a>
             <a href="{{ route('jobs') }}" @class(['is-active' => request()->routeIs('jobs')])>Jobs</a>
             <a href="{{ route('kontakt') }}" @class(['is-active' => request()->routeIs('kontakt')])>Kontakt</a>
@@ -25,7 +24,6 @@
 
     <nav class="mobile-nav" aria-label="Mobile Navigation" data-mobile-nav>
         <a href="{{ route('projekte.index') }}" @class(['is-active' => request()->routeIs('projekte.*')])>Projekte</a>
-        <a href="{{ route('umbauen') }}" @class(['is-active' => request()->routeIs('umbauen')])>Umbauen</a>
         <a href="{{ route('profil') }}" @class(['is-active' => request()->routeIs('profil')])>Profil</a>
         <a href="{{ route('jobs') }}" @class(['is-active' => request()->routeIs('jobs')])>Jobs</a>
         <a href="{{ route('kontakt') }}" @class(['is-active' => request()->routeIs('kontakt')])>Kontakt</a>

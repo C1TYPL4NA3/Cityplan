@@ -11,7 +11,6 @@ use App\Models\ProjectImage;
 use App\Models\ProfileContent;
 use App\Models\ProjectsPageContent;
 use App\Models\SiteSetting;
-use App\Models\UmbauContent;
 use Illuminate\Database\Seeder;
 
 /**
@@ -28,7 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->seedSiteSettings();
         $this->seedHomeContent();
         $this->seedProfileContent();
-        $this->seedUmbauContent();
         $this->seedContactContent();
         $this->seedProjectsPageContent();
         $this->seedProjects();
@@ -162,25 +160,6 @@ class DatabaseSeeder extends Seeder
             ],
             'cta_heading' => 'Sie planen einen Umbau oder ein neues Bauvorhaben?',
             'cta_text' => 'Gerne besprechen wir mit Ihnen die Ausgangslage, mögliche Vorgehensweisen und die nächsten Schritte für Ihr Projekt.',
-        ]);
-    }
-
-    private function seedUmbauContent(): void
-    {
-        UmbauContent::current()->update([
-            'hero_eyebrow' => 'Umbau & Sanierung',
-            'hero_heading' => 'Bestehendes verstehen. Gezielt weiterentwickeln.',
-            'hero_lead' => 'Umbauen bedeutet für uns mehr als Erneuern. Jede bestehende Liegenschaft bringt ihre eigene Geschichte, Konstruktion und technische Ausgangslage mit. Wir analysieren diese sorgfältig und entwickeln Lösungen, die Bestand und neue Anforderungen sinnvoll miteinander verbinden.',
-            'hero_image' => 'seed/projects/wohnliegenschaft-sanierung.jpg',
-            'hero_image_alt' => 'Sanierte Bestandsarchitektur',
-            'feature_heading' => 'Von der ersten Analyse bis zur Übergabe.',
-            'feature_text' => 'Dabei arbeiten wir eng mit Fachplanern, Spezialisten und ausführenden Unternehmen zusammen und schaffen klare Entscheidungsgrundlagen für Bauherrschaften.',
-            'feature_points' => [
-                ['point' => 'Geschäftsliegenschaften'], ['point' => 'Wohnbauten & Wohnungen'], ['point' => 'Altbausubstanz'],
-                ['point' => 'Denkmalpflegerische Aspekte'], ['point' => 'Nutzungsanpassungen'], ['point' => 'Technische Modernisierung'],
-            ],
-            'cta_heading' => 'Sie planen einen Umbau?',
-            'cta_text' => 'Gerne besprechen wir mit Ihnen die Ausgangslage und die nächsten Schritte für Ihr Projekt.',
         ]);
     }
 
