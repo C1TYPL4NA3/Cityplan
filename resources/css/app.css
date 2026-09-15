@@ -935,20 +935,20 @@ img {
 .profile-feature {
     display: grid;
     grid-template-columns: 49% 51%;
-    min-height: 500px;
+    min-height: 250px;
     background: var(--color-green);
     color: #fff;
     overflow: hidden;
 }
 
 .profile-feature__image {
-    min-height: 500px;
+    min-height: 250px;
     background-size: cover;
     background-position: center;
 }
 
 .profile-feature__content {
-    padding: 64px 58px;
+    padding: 22px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -956,28 +956,29 @@ img {
 
 .profile-feature__content .eyebrow {
     color: #ff3942;
+    margin-bottom: 8px;
 }
 
 .profile-feature__content h2 {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     color: #fff;
 }
 
 .profile-feature__content p {
     color: #e8e5e1;
     font-size: var(--body-size);
-    margin-bottom: 18px;
+    margin-bottom: 8px;
 }
 
 .profile-feature-points {
-    margin-top: 13px;
+    margin-top: 4px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 22px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px 18px;
 }
 
 .profile-feature-point {
-    padding: 11px 0 11px 17px;
+    padding: 7px 0 7px 17px;
     border-left: 2px solid var(--color-red);
     font-size: 14px;
     color: #fff;

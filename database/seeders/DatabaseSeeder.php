@@ -133,7 +133,7 @@ class DatabaseSeeder extends Seeder
                 ]],
             ],
             'feature_heading' => 'Bestehendes verstehen. Gezielt weiterentwickeln.',
-            'feature_text' => 'Umbauen bedeutet für uns mehr als Erneuern. Jede bestehende Liegenschaft bringt ihre eigene Geschichte, Konstruktion und technische Ausgangslage mit. Wir analysieren diese sorgfältig und entwickeln Lösungen, die Bestand und neue Anforderungen sinnvoll miteinander verbinden. Dabei arbeiten wir eng mit Fachplanern, Spezialisten und ausführenden Unternehmen zusammen und schaffen klare Entscheidungsgrundlagen für Bauherrschaften.',
+            'feature_text' => 'Umbauen bedeutet für uns mehr als Erneuern: Wir analysieren Geschichte, Konstruktion und Ausgangslage jeder Liegenschaft und entwickeln Lösungen, die Bestand und neue Anforderungen sinnvoll verbinden.',
             'feature_image' => 'seed/profile/profil-feature-green.png',
             'feature_image_alt' => 'Sanierte Bestandsarchitektur',
             'feature_points' => [
