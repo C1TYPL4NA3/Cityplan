@@ -94,24 +94,6 @@
             </div>
         </section>
 
-        <section class="profile-section profile-section--light">
-            <div class="profile-client-grid">
-                <div>
-                    <div class="red-line"></div>
-                    <h2>{{ $content->clients_heading }}</h2>
-                    <p>{{ $content->clients_text }}</p>
-                </div>
-
-                @if(!empty($content->clients_list))
-                    <div class="profile-client-list">
-                        @foreach($content->clients_list as $client)
-                            <div class="profile-client"><span></span>{{ is_array($client) ? ($client['client'] ?? '') : $client }}</div>
-                        @endforeach
-                    </div>
-                @endif
-            </div>
-        </section>
-
         @if(!empty($content->process_steps))
             <section class="profile-section" style="padding-bottom:36px;">
                 <div class="profile-section-head">
@@ -130,6 +112,24 @@
                 </div>
             </section>
         @endif
+
+        <section class="profile-section profile-section--light">
+            <div class="profile-client-grid">
+                <div>
+                    <div class="red-line"></div>
+                    <h2>{{ $content->clients_heading }}</h2>
+                    <p>{{ $content->clients_text }}</p>
+                </div>
+
+                @if(!empty($content->clients_list))
+                    <div class="profile-client-list">
+                        @foreach($content->clients_list as $client)
+                            <div class="profile-client"><span></span>{{ is_array($client) ? ($client['client'] ?? '') : $client }}</div>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+        </section>
 
         <section class="profile-cta">
             <div>
