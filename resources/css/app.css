@@ -1252,7 +1252,6 @@ img {
 }
 
 .projects-hero h1 {
-    font-size: clamp(var(--h1-size-mobile), 7vw, var(--h1-size));
     line-height: 0.94;
 }
 
@@ -1481,7 +1480,6 @@ img {
 }
 
 .project-detail-hero h1 {
-    font-size: clamp(var(--h1-size-mobile), 7vw, var(--h1-size));
     line-height: 0.94;
 }
 

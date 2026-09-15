@@ -26,8 +26,8 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
 
-    @include('partials.design-tokens')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.design-tokens')
 </head>
 <body>
     <x-site-header :setting="$siteSetting" />
