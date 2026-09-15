@@ -232,8 +232,8 @@ img {
 }
 
 .site-header__logo img {
-    width: 196px;
-    max-width: 42vw;
+    width: 260px;
+    max-width: 48vw;
     height: auto;
 }
 
@@ -345,7 +345,7 @@ img {
         padding: 14px 18px;
     }
     .site-header__logo img {
-        width: 164px;
+        width: 210px;
         max-width: 66vw;
     }
     .mobile-nav {
