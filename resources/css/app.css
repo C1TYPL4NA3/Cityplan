@@ -1094,7 +1094,6 @@ img {
     align-items: center;
     background: var(--color-green);
     color: #fff;
-    border-left: 5px solid var(--color-red);
 }
 
 .profile-cta h2 {
