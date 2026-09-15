@@ -94,27 +94,6 @@
             </div>
         </section>
 
-        <section class="profile-section">
-            <div class="profile-tech-grid">
-                <div class="profile-tech-image"
-                     style="background-image:url('{{ $content->tech_image ? asset('storage/' . $content->tech_image) : asset('storage/seed/projects/octavo-ii-gesamtanlage.jpg') }}')"
-                     role="img" aria-label="{{ $content->tech_image_alt }}"></div>
-                <div class="profile-tech-copy">
-                    <div class="red-line"></div>
-                    <h2>{{ $content->tech_heading }}</h2>
-                    <p>{{ $content->tech_text }}</p>
-
-                    @if(!empty($content->tags))
-                        <div class="profile-tags">
-                            @foreach($content->tags as $tag)
-                                <span class="profile-tag">{{ is_array($tag) ? ($tag['tag'] ?? '') : $tag }}</span>
-                            @endforeach
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </section>
-
         <section class="profile-section profile-section--light">
             <div class="profile-client-grid">
                 <div>

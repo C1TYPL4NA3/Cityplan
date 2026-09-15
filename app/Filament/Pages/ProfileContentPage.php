@@ -93,17 +93,6 @@ class ProfileContentPage extends Page implements HasForms
                             ->addActionLabel('Punkt hinzufügen'),
                     ])->columns(2),
 
-                    Forms\Components\Tabs\Tab::make('Technische Projekte')->schema([
-                        Forms\Components\TextInput::make('tech_heading')->label('Überschrift'),
-                        Forms\Components\Textarea::make('tech_text')->label('Text')->rows(3),
-                        Forms\Components\FileUpload::make('tech_image')->label('Bild')->image()->directory('profile')->imageEditor(),
-                        Forms\Components\TextInput::make('tech_image_alt')->label('Alt-Text'),
-                        Forms\Components\Repeater::make('tags')
-                            ->label('Schlagworte')
-                            ->simple(Forms\Components\TextInput::make('tag')->required())
-                            ->addActionLabel('Schlagwort hinzufügen'),
-                    ])->columns(2),
-
                     Forms\Components\Tabs\Tab::make('Bauherrschaften')->schema([
                         Forms\Components\TextInput::make('clients_heading')->label('Überschrift'),
                         Forms\Components\Textarea::make('clients_text')->label('Text')->rows(2),
