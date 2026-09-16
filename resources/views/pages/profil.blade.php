@@ -31,26 +31,15 @@
         @endif
 
         <section class="profile-section">
-            <div class="profile-about-grid">
-                <div class="profile-about-copy">
-                    <div class="red-line"></div>
-                    <h2>{{ $content->about_heading }}</h2>
-                    @foreach($content->about_paragraphs ?? [] as $paragraph)
-                        <p>{{ is_array($paragraph) ? ($paragraph['text'] ?? '') : $paragraph }}</p>
-                    @endforeach
-                    @if($content->quote_text)
-                        <div class="profile-quote">{{ $content->quote_text }}</div>
-                    @endif
-                </div>
-
-                <div class="profile-about-side">
-                    @foreach($content->mini_cards ?? [] as $card)
-                        <div class="profile-mini-card">
-                            <h3>{{ $card['title'] ?? '' }}</h3>
-                            <p>{{ $card['text'] ?? '' }}</p>
-                        </div>
-                    @endforeach
-                </div>
+            <div class="profile-about-copy">
+                <div class="red-line"></div>
+                <h2>{{ $content->about_heading }}</h2>
+                @foreach($content->about_paragraphs ?? [] as $paragraph)
+                    <p>{{ is_array($paragraph) ? ($paragraph['text'] ?? '') : $paragraph }}</p>
+                @endforeach
+                @if($content->quote_text)
+                    <div class="profile-quote">{{ $content->quote_text }}</div>
+                @endif
             </div>
         </section>
 
@@ -112,24 +101,6 @@
                 </div>
             </section>
         @endif
-
-        <section class="profile-section profile-section--light">
-            <div class="profile-client-grid">
-                <div>
-                    <div class="red-line"></div>
-                    <h2>{{ $content->clients_heading }}</h2>
-                    <p>{{ $content->clients_text }}</p>
-                </div>
-
-                @if(!empty($content->clients_list))
-                    <div class="profile-client-list">
-                        @foreach($content->clients_list as $client)
-                            <div class="profile-client"><span></span>{{ is_array($client) ? ($client['client'] ?? '') : $client }}</div>
-                        @endforeach
-                    </div>
-                @endif
-            </div>
-        </section>
 
         <section class="profile-cta">
             <div>

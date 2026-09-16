@@ -61,12 +61,6 @@ class ProfileContentPage extends Page implements HasForms
                             ->simple(Forms\Components\Textarea::make('text')->rows(3)->required())
                             ->addActionLabel('Absatz hinzufügen'),
                         Forms\Components\Textarea::make('quote_text')->label('Hervorgehobenes Zitat')->rows(2)->columnSpanFull(),
-                        Forms\Components\Repeater::make('mini_cards')
-                            ->label('Kleine Karten (3)')
-                            ->schema([
-                                Forms\Components\TextInput::make('title')->label('Titel')->required(),
-                                Forms\Components\Textarea::make('text')->label('Text')->rows(2)->required(),
-                            ])->columns(2)->maxItems(3)->addActionLabel('Karte hinzufügen'),
                     ]),
 
                     Forms\Components\Tabs\Tab::make('Leistungen')->schema([
@@ -92,15 +86,6 @@ class ProfileContentPage extends Page implements HasForms
                             ->simple(Forms\Components\TextInput::make('point')->required())
                             ->addActionLabel('Punkt hinzufügen'),
                     ])->columns(2),
-
-                    Forms\Components\Tabs\Tab::make('Bauherrschaften')->schema([
-                        Forms\Components\TextInput::make('clients_heading')->label('Überschrift'),
-                        Forms\Components\Textarea::make('clients_text')->label('Text')->rows(2),
-                        Forms\Components\Repeater::make('clients_list')
-                            ->label('Liste')
-                            ->simple(Forms\Components\TextInput::make('client')->required())
-                            ->addActionLabel('Eintrag hinzufügen'),
-                    ]),
 
                     Forms\Components\Tabs\Tab::make('Prozess')->schema([
                         Forms\Components\Repeater::make('process_steps')

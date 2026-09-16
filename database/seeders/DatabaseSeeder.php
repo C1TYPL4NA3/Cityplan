@@ -107,29 +107,22 @@ class DatabaseSeeder extends Seeder
             ],
             'about_heading' => 'Erfahrung in Neubau und Bestand. Präzision in der Umsetzung.',
             'about_paragraphs' => [
-                ['text' => 'Die Cityplan AG ist ein Architektur- und Generalunternehmungsunternehmen mit Sitz im Herzen von Zürich. Seit über 25 Jahren planen und realisieren wir Wohn-, Gewerbe- und Industriebauten und begleiten unsere Auftraggeber durch sämtliche relevanten Projektphasen.'],
-                ['text' => 'Unsere Tätigkeit umfasst Neubauten ebenso wie den Umbau und die Sanierung von Geschäftsliegenschaften, Wohnbauten und Einzelwohnungen. Dabei verbinden wir den respektvollen Umgang mit bestehender Bausubstanz mit zeitgemässen Anforderungen an Funktion, Technik, Wirtschaftlichkeit und Gestaltung.'],
-                ['text' => 'Unsere Erfahrung mit Altbauten und denkmalpflegerischen Rahmenbedingungen erlaubt uns, bestehende Qualitäten zu erkennen und gezielt weiterzuentwickeln. Handwerkliche Details, Materialität und der individuelle Charakter eines Gebäudes spielen dabei eine zentrale Rolle.'],
+                ['text' => 'Für uns beginnt gute Architektur mit einem genauen Blick auf das, was bereits da ist – und der Sorgfalt, daraus etwas Stimmiges weiterzuentwickeln.'],
             ],
             'quote_text' => 'Gute Architektur entsteht für uns dort, wo Bestand, Funktion, Gestaltung und eine sorgfältige Realisation zusammenfinden.',
-            'mini_cards' => [
-                ['title' => 'Unsere Auftraggeber', 'text' => 'Institutionelle Bauherrschaften, Unternehmen, Generalunternehmer, private Auftraggeber und Gemeinden.'],
-                ['title' => 'Unser Fokus', 'text' => 'Neubauten, Umbauten und Sanierungen – von einzelnen Nutzungseinheiten bis zu komplexen Geschäfts- und Wohnliegenschaften.'],
-                ['title' => 'Unser Anspruch', 'text' => 'Klare Prozesse, verlässliche Kommunikation und eine Realisation mit Blick auf Termine, Kosten und Qualität.'],
-            ],
+            'mini_cards' => [],
             'services' => [
                 ['number' => '01 · Planung', 'title' => 'Analyse & Entwicklung', 'items' => [
-                    ['item' => 'Planung und Projektentwicklung'], ['item' => 'Machbarkeitsstudien'], ['item' => 'Schätzungen und Grundlagen'],
-                    ['item' => 'Detailplanung'], ['item' => 'Studien und Expertisen'], ['item' => 'Unterhalts- und Sanierungskonzepte'], ['item' => 'Architekturwettbewerbe'],
+                    ['item' => 'Projektentwicklung'], ['item' => 'Machbarkeitsstudien'], ['item' => 'Planung und Detailplanung'],
+                    ['item' => 'Studien und Konzepte'], ['item' => 'Architekturwettbewerbe'],
                 ]],
                 ['number' => '02 · Ausschreibung', 'title' => 'Kosten & Submission', 'items' => [
-                    ['item' => 'Kostenkalkulation und Kostenvoranschläge'], ['item' => 'Ausschreibungen sämtlicher Arbeitsgattungen'],
-                    ['item' => 'Unternehmer-Submissionen'], ['item' => 'Offertvergleich und Vergabegrundlagen'],
-                    ['item' => 'Koordination mit Fachplanern'], ['item' => 'Projektbezogene Entscheidungsgrundlagen'],
+                    ['item' => 'Ausschreibungen sämtlicher Arbeitsgattungen'], ['item' => 'Unternehmer-Submissionen'],
+                    ['item' => 'Offertvergleich und Vergabe'], ['item' => 'Kostenkalkulation und Kostenvoranschläge'],
                 ]],
                 ['number' => '03 · Realisation', 'title' => 'Bauausführung & Management', 'items' => [
-                    ['item' => 'Realisation und Bauleitung'], ['item' => 'Bauausführung und Baumanagement'], ['item' => 'Bauherrenvertretung'],
-                    ['item' => 'Koordination der beteiligten Unternehmen'], ['item' => 'Termin-, Kosten- und Qualitätssteuerung'], ['item' => 'Abnahmen und Projektabschluss'],
+                    ['item' => 'Bauleitung und Projektleitung'], ['item' => 'Termin- und Kostenkontrolle'], ['item' => 'Qualitätssicherung'],
+                    ['item' => 'Koordination der beteiligten Unternehmen'], ['item' => 'Abnahmen und Übergabe'],
                 ]],
             ],
             'feature_heading' => 'Bestehendes verstehen. Gezielt weiterentwickeln.',
@@ -147,12 +140,6 @@ class DatabaseSeeder extends Seeder
             'tags' => [
                 ['tag' => 'Gastroküchen'], ['tag' => 'Industrieanlagen'], ['tag' => 'Biolabore'], ['tag' => 'Liftanlagen'],
                 ['tag' => 'Ladenumbauten'], ['tag' => 'Haustechnikanlagen'], ['tag' => 'Technische Sanierungen'],
-            ],
-            'clients_heading' => 'Für unterschiedliche Bauherrschaften. Mit einem klaren Ziel.',
-            'clients_text' => 'Unterschiedliche Auftraggeber bringen unterschiedliche Anforderungen mit sich. Unsere Aufgabe ist es, diese früh zu verstehen, strukturiert in die Planung zu übersetzen und bis zur Realisation konsequent weiterzuführen.',
-            'clients_list' => [
-                ['client' => 'Institutionelle Bauherrschaften'], ['client' => 'Privatunternehmen'], ['client' => 'Generalunternehmer'],
-                ['client' => 'Private Auftraggeber'], ['client' => 'Gemeinden & öffentliche Auftraggeber'], ['client' => 'Eigentümer & Immobilienorganisationen'],
             ],
             'process_steps' => [
                 ['num' => '01', 'title' => 'Analyse', 'text' => 'Bestand, Bedürfnisse, Rahmenbedingungen und Machbarkeit.'],
