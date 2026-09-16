@@ -1044,6 +1044,10 @@ img {
     display: block;
 }
 
+.profile-cta__contact .btn {
+    display: inline-flex;
+}
+
 .profile-cta__mail {
     color: var(--color-red) !important;
     font-weight: 800;
