@@ -58,6 +58,9 @@ class DesignSetting extends Model
         'Manrope' => 'Manrope',
         'DM Sans' => 'DM Sans',
         'Source Sans 3' => 'Source Sans 3',
+        'Open Sans' => 'Open Sans',
+        'Poppins' => 'Poppins',
+        'Plus Jakarta Sans' => 'Plus Jakarta Sans',
     ];
 
     public static function current(): self
