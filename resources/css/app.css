@@ -669,6 +669,10 @@ img {
     display: block;
 }
 
+.home-cta-right .btn {
+    display: inline-flex;
+}
+
 .home-cta-right a.email {
     color: var(--color-red);
     font-weight: 800;
