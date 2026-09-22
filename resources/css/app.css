@@ -1401,7 +1401,7 @@ img {
     display: grid;
     grid-template-columns: 1.18fr 0.82fr;
     gap: 72px;
-    padding: 58px 0 44px;
+    padding: 58px 0 22px;
     align-items: end;
 }
 
@@ -1410,7 +1410,7 @@ img {
 }
 
 .project-detail-place {
-    margin-top: 18px;
+    margin-top: 8px;
     font-size: 22px;
     color: var(--color-text);
     font-weight: 500;
@@ -1425,7 +1425,7 @@ img {
 }
 
 .project-detail-image {
-    height: 620px;
+    height: 460px;
     overflow: hidden;
     position: relative;
     margin-bottom: 18px;
