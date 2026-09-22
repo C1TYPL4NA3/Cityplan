@@ -87,6 +87,24 @@
             </div>
         @endif
 
+        @php($nextTwo = $gallery->slice(3, 2))
+        @if($nextTwo->count() > 0)
+            <section class="project-detail-two">
+                @foreach($nextTwo as $image)
+                    <div class="project-detail-photo">
+                        <img src="{{ asset('storage/' . $image->image) }}" alt="{{ $image->alt ?: $project->name }}" loading="lazy">
+                    </div>
+                @endforeach
+            </section>
+        @endif
+
+        @php($sixthImage = $gallery->slice(5, 1)->first())
+        @if($sixthImage)
+            <div class="project-detail-wide">
+                <img src="{{ asset('storage/' . $sixthImage->image) }}" alt="{{ $sixthImage->alt ?: $project->name }}" loading="lazy">
+            </div>
+        @endif
+
         <div class="project-detail-endnav">
             <a href="{{ route('projekte.index') }}">← Alle Projekte</a>
             @if($next && $next->id !== $project->id)

@@ -133,9 +133,10 @@ class ProjectResource extends Resource
                                 Forms\Components\Repeater::make('images')
                                     ->relationship('images')
                                     ->label('Galerie (Projektdetailseite)')
-                                    ->helperText('Ca. 3–4 weitere Bilder für die Detailseite. Reihenfolge per Drag & Drop.')
+                                    ->helperText('Bis zu 6 weitere Bilder für die Detailseite. Reihenfolge per Drag & Drop.')
                                     ->reorderable()
                                     ->orderColumn('order')
+                                    ->maxItems(6)
                                     ->schema([
                                         Forms\Components\FileUpload::make('image')
                                             ->label('Bild')
