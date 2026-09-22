@@ -8,7 +8,6 @@
                 <p>{{ $setting->tagline ?: 'Architektur & Generalunternehmung' }}</p>
                 <p>{{ $setting->city }}</p>
                 @if($setting->email)<a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>@endif
-                @if($setting->website)<a href="https://{{ preg_replace('#^https?://#', '', $setting->website) }}" target="_blank" rel="noopener">{{ $setting->website }}</a>@endif
             </div>
 
             @if(!empty($setting->footer_leistungen))
