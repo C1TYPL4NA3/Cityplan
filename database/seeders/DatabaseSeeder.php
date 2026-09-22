@@ -94,9 +94,9 @@ class DatabaseSeeder extends Seeder
     private function seedProfileContent(): void
     {
         ProfileContent::current()->update([
-            'overview_heading' => 'Architektur und Generalunternehmung mit Weitblick.',
-            'overview_lead' => 'Wir planen und realisieren Neubauten, Umbauten und Sanierungen mit einem klaren Anspruch an Qualität, Funktionalität und gestalterische Präzision.',
-            'overview_text' => 'Seit über 25 Jahren begleitet die Cityplan AG Zürich private und institutionelle Auftraggeber durch sämtliche relevanten Projektphasen – von der Analyse und Projektentwicklung über Ausschreibung und Koordination bis zur erfolgreichen Umsetzung. Unsere Erfahrung reicht von Wohn- und Gewerbebauten bis zu komplexen Aufgaben im Bestand.',
+            'overview_heading' => 'Architektur. Planung. Realisierung.',
+            'overview_lead' => 'Wir entwickeln und realisieren Neubauten, Umbauten und Sanierungen – präzise geplant, wirtschaftlich gedacht und sorgfältig umgesetzt.',
+            'overview_text' => 'Seit über 25 Jahren begleitet die Cityplan AG Zürich private und institutionelle Auftraggeber durch sämtliche Projektphasen. Von der ersten Analyse und Projektentwicklung über Ausschreibung und Vergabe bis zur Bauleitung und Übergabe verbinden wir architektonische Qualität mit verlässlicher Umsetzung. Unser Spektrum reicht vom Wohn- und Gewerbebau bis zu anspruchsvollen Projekten im Bestand.',
             'overview_image' => 'seed/profile/profil-overview-hero.png',
             'overview_image_alt' => 'Moderner Wohn- und Gewerbebau mit begrüntem Hof',
             'metrics' => [
