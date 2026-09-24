@@ -1453,6 +1453,7 @@ img {
     background: var(--color-green);
     color: #fff;
     margin: 18px 0 8px;
+    min-height: 340px;
 }
 
 .project-detail-facts-block h2 {
@@ -1464,7 +1465,7 @@ img {
     font-size: 14px;
     line-height: 1.8;
     color: #e4e9e6;
-    margin: 0 0 24px;
+    margin: 24px 0 0;
     white-space: pre-line;
 }
 
@@ -1605,6 +1606,9 @@ img {
     .project-detail-statement {
         grid-template-columns: 1fr;
         gap: 26px;
+    }
+    .project-detail-facts-block {
+        min-height: 0;
     }
     .project-detail-hero {
         padding-top: 40px;

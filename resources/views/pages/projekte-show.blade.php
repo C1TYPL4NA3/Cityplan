@@ -29,11 +29,6 @@
                 <h2>{{ $project->objekt ?: 'Angaben zum Projekt' }}</h2>
             </div>
             <div>
-                @foreach(preg_split('/\n\s*\n+/', trim($project->description ?? '')) as $paragraph)
-                    @continue(trim($paragraph) === '')
-                    <p>{{ trim($paragraph) }}</p>
-                @endforeach
-
                 <div class="project-detail-facts">
                     <div class="project-detail-fact">
                         <div class="project-detail-fact-label">Realisation</div>
@@ -52,6 +47,11 @@
                         <div class="project-detail-fact-value">{{ $project->leistungen ?: '—' }}</div>
                     </div>
                 </div>
+
+                @foreach(preg_split('/\n\s*\n+/', trim($project->description ?? '')) as $paragraph)
+                    @continue(trim($paragraph) === '')
+                    <p>{{ trim($paragraph) }}</p>
+                @endforeach
             </div>
         </section>
 
