@@ -1465,6 +1465,7 @@ img {
     line-height: 1.8;
     color: #e4e9e6;
     margin: 0 0 24px;
+    white-space: pre-line;
 }
 
 .project-detail-facts {
