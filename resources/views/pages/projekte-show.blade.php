@@ -29,7 +29,10 @@
                 <h2>{{ $project->objekt ?: 'Angaben zum Projekt' }}</h2>
             </div>
             <div>
-                <p>{{ $project->description }}</p>
+                @foreach(preg_split('/\n\s*\n+/', trim($project->description ?? '')) as $paragraph)
+                    @continue(trim($paragraph) === '')
+                    <p>{{ trim($paragraph) }}</p>
+                @endforeach
 
                 <div class="project-detail-facts">
                     <div class="project-detail-fact">
