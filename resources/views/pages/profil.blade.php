@@ -43,6 +43,25 @@
             </div>
         </section>
 
+        <section class="profile-feature">
+            <div class="profile-feature__image"
+                 style="background-image:url('{{ $content->feature_image ? asset('storage/' . $content->feature_image) : asset('storage/seed/profile/profil-feature-green.png') }}')"
+                 role="img" aria-label="{{ $content->feature_image_alt }}"></div>
+            <div class="profile-feature__content">
+                <div class="eyebrow">Umbau &amp; Sanierung</div>
+                <h2>{{ $content->feature_heading }}</h2>
+                <p>{{ $content->feature_text }}</p>
+
+                @if(!empty($content->feature_points))
+                    <div class="profile-feature-points">
+                        @foreach($content->feature_points as $point)
+                            <div class="profile-feature-point">{{ is_array($point) ? ($point['point'] ?? '') : $point }}</div>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+        </section>
+
         <section class="profile-section profile-section--light">
             <div class="profile-section-head">
                 <div class="red-line"></div>
@@ -61,25 +80,6 @@
                         </ul>
                     </div>
                 @endforeach
-            </div>
-        </section>
-
-        <section class="profile-feature">
-            <div class="profile-feature__image"
-                 style="background-image:url('{{ $content->feature_image ? asset('storage/' . $content->feature_image) : asset('storage/seed/profile/profil-feature-green.png') }}')"
-                 role="img" aria-label="{{ $content->feature_image_alt }}"></div>
-            <div class="profile-feature__content">
-                <div class="eyebrow">Umbau &amp; Sanierung</div>
-                <h2>{{ $content->feature_heading }}</h2>
-                <p>{{ $content->feature_text }}</p>
-
-                @if(!empty($content->feature_points))
-                    <div class="profile-feature-points">
-                        @foreach($content->feature_points as $point)
-                            <div class="profile-feature-point">{{ is_array($point) ? ($point['point'] ?? '') : $point }}</div>
-                        @endforeach
-                    </div>
-                @endif
             </div>
         </section>
 
