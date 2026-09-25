@@ -55,6 +55,11 @@ class ProfileContentPage extends Page implements HasForms
                     ]),
 
                     Forms\Components\Tabs\Tab::make('Über uns')->schema([
+                        Forms\Components\Toggle::make('about_visible')
+                            ->label('Bereich "Über uns" anzeigen')
+                            ->helperText('Ausschalten, um diesen Bereich auf der Profilseite komplett auszublenden.')
+                            ->default(true)
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('about_heading')->label('Überschrift')->columnSpanFull(),
                         Forms\Components\Repeater::make('about_paragraphs')
                             ->label('Textabsätze')

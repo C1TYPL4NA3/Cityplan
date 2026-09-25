@@ -30,18 +30,20 @@
             </section>
         @endif
 
-        <section class="profile-section">
-            <div class="profile-about-copy">
-                <div class="red-line"></div>
-                <h2>{{ $content->about_heading }}</h2>
-                @foreach($content->about_paragraphs ?? [] as $paragraph)
-                    <p>{{ is_array($paragraph) ? ($paragraph['text'] ?? '') : $paragraph }}</p>
-                @endforeach
-                @if($content->quote_text)
-                    <div class="profile-quote">{{ $content->quote_text }}</div>
-                @endif
-            </div>
-        </section>
+        @if($content->about_visible ?? true)
+            <section class="profile-section">
+                <div class="profile-about-copy">
+                    <div class="red-line"></div>
+                    <h2>{{ $content->about_heading }}</h2>
+                    @foreach($content->about_paragraphs ?? [] as $paragraph)
+                        <p>{{ is_array($paragraph) ? ($paragraph['text'] ?? '') : $paragraph }}</p>
+                    @endforeach
+                    @if($content->quote_text)
+                        <div class="profile-quote">{{ $content->quote_text }}</div>
+                    @endif
+                </div>
+            </section>
+        @endif
 
         <section class="profile-feature">
             <div class="profile-feature__image"
