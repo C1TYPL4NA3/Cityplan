@@ -3,6 +3,13 @@
     $pageTitle = trim(($__seoTitle ?? null) ?: $siteSetting->seo_default_title ?: $siteSetting->company_name);
     $pageDescription = ($__seoDescription ?? null) ?: $siteSetting->seo_default_description;
 
+    $postalCode = null;
+    $locality = trim($siteSetting->city ?? '') ?: null;
+    if ($locality && preg_match('/^(\d{4})\s+(.+)$/', $locality, $cityParts)) {
+        $postalCode = $cityParts[1];
+        $locality = $cityParts[2];
+    }
+
     $organizationSchema = array_filter([
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
@@ -11,10 +18,11 @@
         'logo' => $siteSetting->logo ? asset('storage/' . $siteSetting->logo) : null,
         'email' => $siteSetting->email ?: null,
         'telephone' => $siteSetting->phone ?: null,
-        'address' => ($siteSetting->address || $siteSetting->city) ? array_filter([
+        'address' => ($siteSetting->address || $locality) ? array_filter([
             '@type' => 'PostalAddress',
             'streetAddress' => $siteSetting->address ?: null,
-            'addressLocality' => $siteSetting->city ?: null,
+            'postalCode' => $postalCode,
+            'addressLocality' => $locality,
             'addressCountry' => 'CH',
         ]) : null,
     ]);
