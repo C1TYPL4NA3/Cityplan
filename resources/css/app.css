@@ -649,18 +649,22 @@ img {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 36px;
     align-items: center;
-    background: #f2f1ef;
-    border-left: 5px solid var(--color-red);
+    background: var(--color-green);
+    color: #fff;
     padding: 38px 42px;
+}
+
+.home-cta-box h2 {
+    color: #fff;
 }
 
 .home-cta-box p {
     margin: 0;
-    color: var(--color-text);
+    color: #e8e5e1;
 }
 
 .home-cta-right {
-    border-left: 1px solid #d5d1ce;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
     padding-left: 32px;
 }
 
@@ -706,7 +710,7 @@ img {
     }
     .home-cta-right {
         border-left: 0;
-        border-top: 1px solid #d5d1ce;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
         padding: 22px 0 0;
     }
 }
