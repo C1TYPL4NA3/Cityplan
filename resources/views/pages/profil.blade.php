@@ -104,21 +104,6 @@
             </section>
         @endif
 
-        <section class="profile-cta">
-            <div>
-                <h2>{{ $content->cta_heading }}</h2>
-                <p>{{ $content->cta_text }}</p>
-            </div>
-
-            @php($setting = \App\Models\SiteSetting::current())
-            <div class="profile-cta__contact">
-                <strong>{{ $setting->company_name }}</strong>
-                <a class="profile-cta__mail" href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
-                <a href="{{ 'https://' . preg_replace('#^https?://#', '', $setting->website) }}" target="_blank" rel="noopener">{{ $setting->website }}</a>
-                <a class="btn" style="margin-top:12px;" href="mailto:{{ $setting->email }}?subject=Projektanfrage">Projekt besprechen</a>
-            </div>
-        </section>
-
     </div>
 
 @endsection
