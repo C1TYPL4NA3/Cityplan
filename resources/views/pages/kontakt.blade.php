@@ -2,6 +2,7 @@
     $__seoTitle = 'Kontakt — ' . \App\Models\SiteSetting::current()->company_name;
     $setting = \App\Models\SiteSetting::current();
     $mapSrc = $setting->map_link ?: 'https://maps.google.com/maps?q=Z%C3%BCrich%2C%20Schweiz&t=&z=13&ie=UTF8&iwloc=&output=embed';
+    $fullLocation = collect([$setting->address, $setting->city])->filter()->implode(', ');
 @endphp
 @extends('layouts.app')
 
@@ -22,7 +23,7 @@
                     </div>
                     <div class="contact-row">
                         <small>Standort</small>
-                        <span>{{ $setting->city }}</span>
+                        <span>{{ $fullLocation }}</span>
                     </div>
                     @if($setting->phone)
                         <div class="contact-row">
@@ -63,7 +64,7 @@
 
                 <div class="contact-map__label">
                     <small>Standort</small>
-                    <strong>{{ $setting->city }}</strong>
+                    <strong>{{ $fullLocation }}</strong>
                 </div>
             </div>
         </section>
