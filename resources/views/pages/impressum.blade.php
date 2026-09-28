@@ -11,8 +11,5 @@
         @if($setting->address)<p>{{ $setting->address }}, {{ $setting->city }}</p>@endif
         @if($setting->phone)<p>Telefon: {{ $setting->phone }}</p>@endif
         @if($setting->email)<p>E-Mail: {{ $setting->email }}</p>@endif
-        <p style="margin-top:32px;color:var(--color-muted);font-size:14px;">
-            Platzhalter — bitte durch die rechtsverbindlichen Angaben (Handelsregister, UID, vertretungsberechtigte Person etc.) ersetzen.
-        </p>
     </div>
 @endsection
