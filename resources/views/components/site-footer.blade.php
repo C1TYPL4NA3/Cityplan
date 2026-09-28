@@ -30,7 +30,6 @@
             <div class="site-footer__col">
                 <h3>Rechtliches</h3>
                 <a href="{{ route('impressum') }}">Impressum</a>
-                <a href="{{ route('datenschutz') }}">Datenschutz</a>
             </div>
 
         </div>

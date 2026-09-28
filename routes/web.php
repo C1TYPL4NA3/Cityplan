@@ -38,6 +38,5 @@ Route::get('/kontakt', function () {
 })->name('kontakt');
 
 Route::get('/impressum', fn () => view('pages.impressum'))->name('impressum');
-Route::get('/datenschutz', fn () => view('pages.datenschutz'))->name('datenschutz');
 
 Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
